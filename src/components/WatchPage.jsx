@@ -5,10 +5,10 @@ import { Link,useSearchParams } from 'react-router-dom'
 import { USERICON_LOGO, YOUTUBE_VIDEO_API } from '../utils/constants'
 import SideVideo from './SideVideo'
 import CommentContainer from './CommentContainer'
+import { value_converter } from '../utils/data'
 
 const WatchPAge = () => {
 
-    
   
     const [videos,setvideos] = useState([])
     const [data,setdata] =useState("")
@@ -33,7 +33,7 @@ const WatchPAge = () => {
       const getVideos= async() =>{
       const data = await fetch(YOUTUBE_VIDEO_API)
       const json = await data.json()
-    //  console.log(json.items)
+      //console.log(json.items)
       setvideos(json.items)
     }
 
@@ -43,7 +43,7 @@ const WatchPAge = () => {
       const vidId = searchparams.get("v")
       const viddata = await fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=" +vidId+"&key=AIzaSyCTLBERtTKBWWT0MwhN2bCF6zB5Zig9Gkk")
       const json = await viddata.json()
-     // console.log(json.items)
+      //console.log(json.items)
       setdata(json.items[0])
     }
 
@@ -77,7 +77,7 @@ const WatchPAge = () => {
                 </div>
                 <div className='pr-10'>
                   <h1 className='font-bold'>{data?.snippet?.channelTitle}</h1>
-                  <p className='text-xs'>{data?.statistics?.viewCount} Subscribers</p>
+                  <p className='text-xs'>{value_converter(data?.statistics?.viewCount)} Subscribers</p>
                 </div>
                 <div className="flex items-center space-x-4 px-3 py-2">
                     <button className="px-6 py-2 bg-red-500 text-white font-bold text-sm rounded-3xl hover:bg-red-700 transition duration-200 shadow-md">
@@ -111,6 +111,9 @@ const WatchPAge = () => {
 }
 
 export default WatchPAge
+
+
+
 
 
 

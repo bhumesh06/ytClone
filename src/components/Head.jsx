@@ -10,7 +10,7 @@ const Head = () => {
   const[suggestions, setsuggestions] = useState([])
   const [showsuggestions, setshowsuggestions]= useState(false)
   const dispatch = useDispatch()
-  console.log(suggestions)
+  //console.log(suggestions)
   //debouncing
   useEffect(()=>{
     //make an api call on every key stroke

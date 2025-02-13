@@ -11,3 +11,4 @@ export const YOUTUBE_SPECIFICVIDEO_DETAILS_API = "https://youtube.googleapis.com
 export const YOUTUBE_COMMENT_API1 ="https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId="
 export const YOUTUBE_COMMENT_API2 ="&key=AIzaSyCTLBERtTKBWWT0MwhN2bCF6zB5Zig9Gkk"
 export const SEARCH_ICON ="https://fontawesome.com/v5/icons/search?f=classic&s=solid"
+export const SIDEVIDEO = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&videoCategoryId="

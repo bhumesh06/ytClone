@@ -1,3 +1,4 @@
+import { value_converter } from "../utils/data";
 
 const SideVideo = ({info}) => {
 
@@ -15,7 +16,7 @@ const SideVideo = ({info}) => {
     <ul className="">
        <li className="font-bold py-2 text-s">{title}</li>
        <li  >{channelTitle}</li>
-       <li >{statistics.viewCount} Views</li>
+       <li >{value_converter(statistics.viewCount)} Views</li>
 
     </ul>
     </div>
